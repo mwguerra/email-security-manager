@@ -26,8 +26,8 @@ class EmailSecurityMiddleware
         }
 
         $user = Auth::user();
-        $redirectRoute = config('email-verification.redirect_route', 'verification.notice');
-        $skipRoutes = [
+        $redirectRoute = config('email-security.redirect_route', 'verification.notice');
+        $skipRoutes = config('email-security.skip_routes', [
             'verification.notice',
             'verification.verify',
             'verification.send',
@@ -35,7 +35,7 @@ class EmailSecurityMiddleware
             'password.reset',
             'password.update',
             'logout'
-        ];
+        ]);
 
         // Skip verification checks for specific routes
         if (in_array($request->route()->getName(), $skipRoutes)) {
