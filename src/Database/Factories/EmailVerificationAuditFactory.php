@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories;
+namespace MWGuerra\EmailSecurityManager\Database\Factories;
 
 use App\Models\EmailVerificationAudit;
 use App\Models\User;
