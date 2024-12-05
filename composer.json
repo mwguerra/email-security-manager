@@ -1,0 +1,26 @@
+{
+    "name": "mwguerra/email-security-manager",
+    "description": "A robust Laravel package for managing email verification, password security, and audit trails",
+    "type": "library",
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0",
+        "phpunit/phpunit": "^10.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "MWGuerra\\EmailSecurityManager\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marcelo W. Guerra",
+            "email": "mwguerra@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
