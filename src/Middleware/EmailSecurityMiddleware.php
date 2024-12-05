@@ -2,16 +2,16 @@
 
 namespace MWGuerra\EmailSecurityManager\Middleware;
 
-use App\Services\EmailVerificationService;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use MWGuerra\EmailSecurityManager\Services\EmailSecurityService;
 use Symfony\Component\HttpFoundation\Response;
 
 class EmailSecurityMiddleware
 {
     public function __construct(
-        protected EmailVerificationService $verificationService
+        protected EmailSecurityService $verificationService
     ) {}
 
     /**
@@ -49,7 +49,7 @@ class EmailSecurityMiddleware
             $messages[] = 'Your email verification has expired. Please verify your email address.';
 
             // Create audit record
-            $user->verificationAudits()->create([
+            $user->securityAudits()->create([
                 'email' => $user->email,
                 'triggered_by' => 'system',
                 'reason' => 'Email verification expired'
@@ -64,7 +64,7 @@ class EmailSecurityMiddleware
             $messages[] = 'Your password has expired. Please change your password.';
 
             // Create audit record
-            $user->verificationAudits()->create([
+            $user->securityAudits()->create([
                 'email' => $user->email,
                 'triggered_by' => 'system',
                 'reason' => 'Password expired'
