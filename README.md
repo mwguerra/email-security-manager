@@ -226,6 +226,10 @@ If you discover any security issues, please email mwguerra@gmail.com instead of 
 - [Marcelo W. Guerra](https://github.com/mwguerra)
 - [All Contributors](../../contributors)
 
+## Special Thanks
+
+Special thanks to the [Beer and Code Laravel Community](https://github.com/beerandcodeteam) for all the support, feedback, and great discussions that helped shape this package. Their dedication to sharing knowledge and fostering collaboration in the Laravel ecosystem is truly inspiring. 🍺👨‍💻
+
 ## About
 
 I'm a software engineer specializing in Laravel and PHP development. Visit [mwguerra.com](https://mwguerra.com) to learn more about my work.
