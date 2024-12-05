@@ -7,8 +7,11 @@
         "illuminate/support": "^11.0"
     },
     "require-dev": {
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0",
         "orchestra/testbench": "^9.0",
-        "phpunit/phpunit": "^10.0"
+        "phpunit/phpunit": "^10.0",
+        "phpunit/php-code-coverage": "^10.0"
     },
     "license": "MIT",
     "autoload": {
@@ -22,5 +25,19 @@
             "email": "mwguerra@gmail.com"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "autoload-dev": {
+        "psr-4": {
+            "MWGuerra\\EmailSecurityManager\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
 }
